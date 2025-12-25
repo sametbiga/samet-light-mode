@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: rubik;
+    background-image: url("../img/word.gif"); 
+    background-repeat: no-repeat;
+    background-color: #F4F6FA;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px;
+
+        .headerWr{
+            display: flex;
+            gap: 10px;
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            h5{
+                font-weight: 900;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+        }
+            .headerBox{
+                margin-top: 10px;
+                display: flex;
+                gap: 10px;
+                img{
+                    width: 16px;
+                    height: 16px;
+                }
+                .slin {
+                width: 32px;
+                height: 14px;
+                background-color: #A729F5;
+                border-radius: 100px;
+                padding: 2px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                }
+                .slin .slinn {
+                width: 14px;
+                height: 14px;
+                background-color: #fff;
+                border-radius: 100px;
+                transition: transform 0.3s;
+                }
+                .slin.active .slinn {
+                transform: translateX(18px);
+                }
+            
+            }
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #313E51;
+    margin-top: 40px;
+    .sectBox{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+            p{
+                font-weight: 300;
+                font-size: 40px;
+            }
+            h1{
+                font-weight: 500;
+                font-size: 40px; 
+            }
+            i{
+                color: #626C7F;
+                font-weight: 400;
+                font-size: 14px;
+            }
+    }
+    .btnBox{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+            button{
+                color: #313E51;
+                gap: 20px;
+                padding-left: 20px;
+                display: flex;
+                align-items: center;
+                width: 300px;
+                height: 64px;
+                border: none;
+                border-radius: 12px;
+                background-color: #fff;
+                margin-top: 10px;
+                 
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+    }
+
+}
+.quiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+     .quizBox{
+        width: 327px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+         p{
+            font-weight: 400;
+            font-size: 14px;
+            color: #626C7F;
+         }
+         h3{
+            color: #313E51;
+            font-weight: 500;
+            font-size: 20px;
+         }
+         .bar{
+            display: flex;
+            align-items: center;
+            width: 327px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 999px;
+
+             div{
+                border-radius: 999px;
+                background-color: #A729F5;
+                width: 152px;
+                height: 8px;
+             }
+         }
+     }
+     .quizForm{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button{
+            display: flex;
+            align-items: center;
+            width: 327px;
+            height: 64px;
+            border: none;
+            background-color: #fff;
+            border-radius: 12px;
+             p{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-radius: 6px;
+                width: 40px;
+                height: 40px;
+                background-color: #F4F6FA;
+                color: #626C7F;
+                font-weight: 500;
+                font-size: 18px;
+             }
+             h6{
+                color: #313E51;
+                font-weight: 500;
+                font-size: 18px;
+             }
+        }
+        .formSbmt{
+            background-color: #A729F5;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+        }
+     }
+}
+.selected{ 
+    border: 4px solid #A729F5!important ;
+    p{
+        background-color: #A729F5!important ;
+        color: white!important;
+    }
+}
+.correct{
+    border: 4px solid #26D782 !important;
+    p{
+        background-color: #26D782 !important;
+        color: #fff !important;
+    }
+}
+.wrong{
+    border: 4px solid red !important;
+    p{
+        background-color: red !important;
+        color: #fff !important;
+    }
+
+}
+.scorsec{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.scoredWr{
+    color: #313E51;
+    p{
+        font-weight: 300;
+        font-size: 40px;
+    }
+    h1{
+        font-weight: 500;
+        font-size: 40px;
+    }
+}
+.scoredBox{
+    width: 327px;
+    height: 310px;
+}
+.minibox{
+    color: #626C7F;
+    border-radius: 12px;
+    width: 327px;
+    height: 242px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+     img{
+        height: 40px;
+        width: 40px;
+     }
+     h5{
+        margin-top: 12px;
+        margin-left: 10px;
+    }
+     h2{
+        font-size: 88px;
+     }
+     p{
+        color: #626c7f8e;
+        font-weight: 100;
+        font-size: 18px;
+     }
+}
+.scordbtn{
+    width: 327px;
+    height: 56px;
+    background-color: #A729F5;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    margin-top: 20px;
+}
