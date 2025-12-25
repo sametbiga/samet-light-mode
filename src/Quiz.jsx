@@ -5,7 +5,6 @@ function Quiz() {
   const [ selected , setSelected] = useState("")
   const [submitted, setSubmitted] = useState(false);
   const [scored, setScored] = useState(false);
-
   if(scored){
     return <Scored />
   }
@@ -31,10 +30,14 @@ function Quiz() {
               selected === "A" ? "correct" : ""
               :selected ==="A" ? "selected" : ""
             }
-            onClick={() => setSelected("A")}
+            onClick={() =>{
+               setSelected("A");
+               setShowQuiz(true);
+              }}
             >
                 <p>A</p>
                 <h6>4.5 : 1</h6>
+                {!submitted ? ("") : (<img src="src/assets/img/true.png" className='truebox' />)}
             </button>
             <button 
             type='button'
@@ -47,6 +50,7 @@ function Quiz() {
             >
                 <p>B</p>
                 <h6>3 : 1 </h6>
+                {!submitted ? ("") : (<img src="src/assets/img/false.png" className='falsebox' />)}
             </button>
             <button
             type='button'
@@ -59,6 +63,7 @@ function Quiz() {
             >
                 <p>C</p>
                 <h6>2.5 : 1</h6>
+                {!submitted ? ("") : (<img src="src/assets/img/false.png" className='falseboxo' />)}
             </button>
             <button
             type='button'
@@ -71,6 +76,7 @@ function Quiz() {
             >
                 <p>D</p>
                 <h6>5 : 1</h6>
+                {!submitted ? ("") : (<img src="src/assets/img/false.png" className='falseboxoo' />)}
             </button>
             {!submitted ? (
               <button className='formSbmt'>

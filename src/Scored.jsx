@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import App from './App.jsx'
 function Scored() {
     const [play,setPlay] = useState(false)
+    useEffect(() => {
+    if(play) {
+      location.reload(); 
+    }
+  }, [play])
     if(play){
         return <App />
     }

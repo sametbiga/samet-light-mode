@@ -107,6 +107,21 @@ section{
     }
 
 }
+button{
+    cursor: pointer;
+}
+.truebox{
+    margin-left: 150px;
+}
+.falsebox{
+    margin-left: 170px;
+}
+.falseboxo{
+    margin-left: 155px;
+}
+.falseboxoo{
+    margin-left: 170px;
+}
 .quiz{
     display: flex;
     flex-direction: column;
