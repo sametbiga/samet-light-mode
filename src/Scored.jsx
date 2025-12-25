@@ -40,9 +40,7 @@ function Scored({ score, total }) {
           <button
             className='scordbtn'
             onClick={() => setPlay(true)}
-          >
-            Play Again
-          </button>
+          >Play Again</button>
         </div>
       </div>
     </section>
