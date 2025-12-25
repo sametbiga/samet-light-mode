@@ -6,6 +6,10 @@ function Quiz() {
   const [submitted, setSubmitted] = useState(false);
   const [scored, setScored] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const totalQuestions = 10;
+  const progressPercentage = ((currentQuestion + 1) / totalQuestions) * 100;
 
   const answer = [
     {
@@ -101,7 +105,14 @@ function Quiz() {
   ]
 
   if (scored) {
-    return <Scored />
+    return <Scored score={score} total={answer.length} />
+  }
+
+  const handleSubmit = () => {
+    setSubmitted(true)
+    if (selected === answer[currentQuestion].correct) {
+      setScore(score + 1)
+    }
   }
 
   const handleNext = () => {
@@ -122,89 +133,37 @@ function Quiz() {
         <div className='quizBox'>
           <p>Question {currentQuestion + 1} of 10</p>
           <h3>{currentQ.name}</h3>
-          <div className='bar'><div></div></div>
+
+          <div className="progressbar">
+            <div
+              className="progressbarfill"
+              style={{ width: `${progressPercentage}%` }}
+            />
+          </div>
         </div>
-        <form className='quizForm'
+
+        <form
+          className='quizForm'
           onSubmit={(e) => {
             e.preventDefault();
-            setSubmitted(true);
+            handleSubmit();
           }}
         >
-          <button
-            type='button'
-            className={
-              submitted ?
-                selected === "A" ? (currentQ.correct === "A" ? "correct" : "wrong") : ""
-                : selected === "A" ? "selected" : ""
-            }
-            onClick={() => !submitted && setSelected("A")}
-          >
-            <p>A</p>
-            <h6>{currentQ.a}</h6>
-            {submitted && selected === "A" && (
-              <img 
-                src={currentQ.correct === "A" ? "src/assets/img/true.png" : "src/assets/img/false.png"} 
-                className={currentQ.correct === "A" ? 'truebox' : 'falsebox'} 
-              />
-            )}
-          </button>
-
-          <button
-            type='button'
-            className={
-              submitted ?
-                selected === "B" ? (currentQ.correct === "B" ? "correct" : "wrong") : ""
-                : selected === "B" ? "selected" : ""
-            }
-            onClick={() => !submitted && setSelected("B")}
-          >
-            <p>B</p>
-            <h6>{currentQ.b}</h6>
-            {submitted && selected === "B" && (
-              <img 
-                src={currentQ.correct === "B" ? "src/assets/img/true.png" : "src/assets/img/false.png"} 
-                className={currentQ.correct === "B" ? 'truebox' : 'falsebox'} 
-              />
-            )}
-          </button>
-
-          <button
-            type='button'
-            className={
-              submitted ?
-                selected === "C" ? (currentQ.correct === "C" ? "correct" : "wrong") : ""
-                : selected === "C" ? "selected" : ""
-            }
-            onClick={() => !submitted && setSelected("C")}
-          >
-            <p>C</p>
-            <h6>{currentQ.c}</h6>
-            {submitted && selected === "C" && (
-              <img 
-                src={currentQ.correct === "C" ? "src/assets/img/true.png" : "src/assets/img/false.png"} 
-                className={currentQ.correct === "C" ? 'truebox' : 'falseboxo'} 
-              />
-            )}
-          </button>
-
-          <button
-            type='button'
-            className={
-              submitted ?
-                selected === "D" ? (currentQ.correct === "D" ? "correct" : "wrong") : ""
-                : selected === "D" ? "selected" : ""
-            }
-            onClick={() => !submitted && setSelected("D")}
-          >
-            <p>D</p>
-            <h6>{currentQ.d}</h6>
-            {submitted && selected === "D" && (
-              <img 
-                src={currentQ.correct === "D" ? "src/assets/img/true.png" : "src/assets/img/false.png"} 
-                className={currentQ.correct === "D" ? 'truebox' : 'falseboxoo'} 
-              />
-            )}
-          </button>
+          {["A", "B", "C", "D"].map((key) => (
+            <button
+              key={key}
+              type='button'
+              className={
+                submitted
+                  ? selected === key
+                  ? currentQ.correct === key ? "correct" : "wrong" : "" : selected === key ? "selected" : ""
+              }
+              onClick={() => !submitted && setSelected(key)}
+            >
+              <p>{key}</p>
+              <h6>{currentQ[key.toLowerCase()]}</h6>
+            </button>
+          ))}
 
           {!submitted ? (
             <button className='formSbmt' type='submit' disabled={!selected}>
