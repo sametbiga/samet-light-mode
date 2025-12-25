@@ -322,3 +322,47 @@ button{
 .quizForm button {
   position: relative; /* img için */
 }
+
+body.dark {
+  background-image: url(../img/elips.png);  
+  background-color: #313E51;
+  color: #FFFFFF;
+}
+
+body.dark button {
+  background-color: #3B4D66;
+  color: #FFFFFF;
+}
+
+body.dark .sectBox p,
+body.dark .sectBox h2,
+body.dark .sectBox i {
+  color: #ffffff;
+}
+
+body.dark .quizForm button {
+  background-color: #3B4D66;
+}
+
+body.dark .quizForm button:not(.formSbmt) h6 {
+  color: #ffffff !important;
+}
+
+body.dark .quizBox p,
+body.dark .quizBox h3 {
+  color: #ffffff;
+}
+
+body.dark .scoredBox .minibox {
+  background-color: #3B4D66;
+}
+
+body.dark .scoredBox .minibox h2,
+body.dark .scoredBox .minibox p,
+body.dark .scoredBox .minibox h5 {
+  color: #ffffff;
+}
+
+body.dark .progressbar {
+  background-color: #3B4D66 !important;
+}
