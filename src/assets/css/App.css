@@ -143,7 +143,7 @@ button{
             font-weight: 500;
             font-size: 20px;
          }
-         .bar{
+         .progressbar{
             display: flex;
             align-items: center;
             width: 327px;
@@ -151,7 +151,7 @@ button{
             background-color: #fff;
             border-radius: 999px;
 
-             div{
+             .progressbarfill{
                 border-radius: 999px;
                 background-color: #A729F5;
                 width: 152px;
