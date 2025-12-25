@@ -283,3 +283,42 @@ button{
     border: none;
     margin-top: 20px;
 }
+.quizForm button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quizForm button p {
+  min-width: 50px;
+  max-width: 50px;
+  flex-shrink: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quizForm button h6 {
+  flex: 1;
+  margin: 0;
+  white-space: normal; /* Metni alt satıra geçir */
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.quizForm button img {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.quizForm button {
+  position: relative; /* img için */
+}
